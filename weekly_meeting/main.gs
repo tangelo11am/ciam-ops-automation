@@ -368,6 +368,8 @@ function getOrCreateYearFolder(rootId, folderName, token) {
   const data = confluenceGet(`/rest/api/content/${rootId}/child/page?limit=50`, token);
   const found = data.results.find(p => p.title === folderName);
   if (found) {
+
+    
     console.log(`📁 연도 폴더 발견: ${folderName} (${found.id})`);
     return found.id;
   }
